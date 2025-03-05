@@ -1,7 +1,7 @@
-🔹 1. Sections ({{#section}} and {{^section}})
+# 1.Sections ({{#section}} and {{^section}})
 
 Mustache uses sections for conditional rendering and looping.
-✅ Example 1: Looping Through an Array
+## ✅ Example 1: Looping Through an Array
 
 
 ```
@@ -24,7 +24,7 @@ const data = {
 console.log(Mustache.render(template, data));
 ```
 
-📝 Output:
+## 📝 Output:
 
   ```
 <h2>Users List</h2>
@@ -35,7 +35,7 @@ console.log(Mustache.render(template, data));
 
 ```
 
-✅ Example 2: Conditional Rendering
+## ✅ Example 2: Conditional Rendering
 
 You can conditionally show or hide elements based on the data.
 ```
@@ -54,9 +54,11 @@ const data2 = { isAdmin: false };
 console.log(Mustache.render(template, data1)); // Shows: "Welcome, Admin!"
 console.log(Mustache.render(template, data2)); // Shows: "You are a regular user."
 ```
-🔹 2. Using {{.}} for Iteration
 
-If you only have an array of values (not objects), {{.}} lets you directly access each item.
+# 🔹 2. Using {{.}} for Iteration
+
+## If you only have an array of values (not objects), {{.}} lets you directly access each item.
+
 ```
 const template = `
     <ul>
@@ -69,8 +71,11 @@ const template = `
 const data = { fruits: ["Apple", "Banana", "Cherry"] };
 
 console.log(Mustache.render(template, data));
+
 ```
-📝 Output:
+
+## 📝 Output:
+
 ```
 <ul>
     <li>Apple</li>
@@ -80,8 +85,9 @@ console.log(Mustache.render(template, data));
 
 ```
 You can use Object.assign() or the spread operator (...) to combine multiple objects before passing them.
-🔹 Example 1: Merging Two Objects
 
+
+## 🔹 Example 1: Merging Two Objects
 
 ```
 const template = `
@@ -97,12 +103,20 @@ const locationData = { location: { city: "New York", country: "USA" } };
 const mergedData = { ...userData, ...locationData };
 
 console.log(Mustache.render(template, mergedData));
+
+
 ```
-📝 Output:
+
+
+## 📝 Output:
+
+
 ```
 <h1></h1>
 <p>User: Alice, Age: 25</p>
 <p>Location: New York, USA</p>
+
+
 ```
 
 
