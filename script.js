@@ -28,10 +28,13 @@ async function fetchUsers() {
             }));
 
             // Prepare Data for Mustache
-            const userData = { users: modifiedData };
-            
+            // const userData = { users: modifiedData };
+            let add= { userData: function(){
+                return { users: modifiedData };
+            }}
             // Render Template with Data
-            const output = Mustache.render(template, userData);
+            // const output = Mustache.render(template, userData);
+            const output = Mustache.render(template, add.userData());
 
             // Insert Rendered Output into HTML
             document.getElementById("user-container").innerHTML = output;
